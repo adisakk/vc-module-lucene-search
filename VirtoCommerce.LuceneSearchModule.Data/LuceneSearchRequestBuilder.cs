@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Lucene.Net.Analysis.Standard;
@@ -73,6 +73,8 @@ namespace VirtoCommerce.LuceneSearchModule.Data
                 {
                     DefaultOperator = QueryParser.Operator.AND
                 };
+
+                parser.AllowLeadingWildcard = true; // Allow leading wildcard for GFMarket
 
                 result = parser.Parse(searchKeywords);
             }
